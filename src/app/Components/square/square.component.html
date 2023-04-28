@@ -1,0 +1,8 @@
+<div
+  class="game-square rounded-lg border d-flex justify-content-center align-items-center mb-2"
+  (click)="changePlayer()"
+  [ngClass]="{ noClick: gameService.winner }"
+>
+  <p class="text-orange" *ngIf="square.state == 'X'">{{ square.state }}</p>
+  <p class="text-warning" *ngIf="square.state == 'O'">{{ square.state }}</p>
+</div>

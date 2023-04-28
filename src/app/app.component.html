@@ -1,0 +1,40 @@
+<div
+  class="min-h-screen min-w-screen"
+>
+  <div class="header pt-5">
+    <h1 class="text-center text-teal fw-bolder" style="letter-spacing: 7px;">
+      Tic-<span class="text-warning">Tac</span>-Toe
+    </h1>
+
+    <!-- Player Name -->
+    <h3
+      class="text-center text-orange mt-4 fw-bold"
+      *ngIf="!gameService.winner"
+      [ngClass]="{ 'text-warning': gameService.activePlayer == 'O' }"
+    >
+      <span class="fs-4">Current Player :</span> {{ gameService.activePlayer }}
+    </h3>
+
+    <!-- Winner Text -->
+    <h1
+      class="text-center text-danger mt-4 text-4xl fw-semibold"
+      *ngIf="gameService.winner"
+    >
+      🥳 {{ gameService.activePlayer }} WON 🥳
+    </h1>
+
+    <!-- Reset the Game -->
+    <div class="d-flex justify-content-center">
+      <div>
+        <button
+          class="btn-danger text-dark fw-bold py-2 px-4 rounded mx-auto block mt-3"
+          *ngIf="gameService.gameOver"
+          (click)="resetGame()"
+        >
+          Play Again
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-board></app-board>
+</div>
