@@ -1,4 +1,4 @@
-# Tic Tac Toe Game
+# TIC TAC TOE GAME
 This is a simple Tic Tac Toe game built using Angular
 
 ## FEATURES
